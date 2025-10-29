@@ -36,7 +36,12 @@ html {
     scroll-behavior: smooth;
 }
 
-
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;  /* Темный фон для всего экрана */
+    min-height: 100vh;
+}
 
 /* ============================================
    HOME SCREEN - Split Layout
@@ -46,23 +51,23 @@ html {
 
 .homescreen {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1400px;  /* Ограничение до 1400px */
     height: 720px;
     display: flex;
     position: relative;
     overflow: hidden;
-    background-color: #FAF6F4;
+    background-color: #1a1a1a;  /* Темный фон для контейнера */
     margin: 0 auto;
 }
 /* Center Logo Overlay */
 .center-overlay {
     position: absolute;
     text-align: center;
-    z-index: 100;
+    z-index: 999;  /* Выше всех элементов */
     pointer-events: none;
-    transform: translate(-50%,-90%);
-    left:50%; top:50%;
-    
+    top: 40px;  /* Отступ 40px от верха */
+    left: 50%;  /* Центрирование по горизонтали */
+    transform: translateX(-50%);  /* Только горизонтальное центрирование */
 }
 
 /* Kepler Std Display 64pt - H1 / Display / Caps (Desktop) */
@@ -93,13 +98,14 @@ html {
 /* Split Sections - Каждая ровно 700px */
 .split-section {
     font-family: 'Aktiv Grotesk Corp', serif;
-    
+    width: 700px;  /* Фиксированная ширина каждой секции */
+    height: 720px;  /* Высота равна высоте контейнера */
     position: relative;
     font-size: 20px;
     text-align: center;
     cursor: pointer;
     transition: all 0.4s ease;
-    overflow: auto;
+    overflow: hidden;  /* Исправлено для корректного отображения */
 }
 
 .split-section:hover {
@@ -239,6 +245,20 @@ html {
 /* ============================================
    RESPONSIVE - MOBILE
    ============================================ */
+
+/* Для экранов больше 1400px - фиксированные размеры */
+@media (min-width: 1401px) {
+    .homescreen {
+        max-width: 1400px;
+    }
+    
+    .split-section {
+        width: 700px;
+        height: 720px;
+    }
+}
+
+/* Для экранов до 1400px - адаптивные размеры */
 @media (max-width: 1400px) {
     .homescreen {
         max-width: 100%;
@@ -246,6 +266,7 @@ html {
     
     .split-section {
         width: 50%;
+        height: 720px;
     }
 }
 
@@ -264,18 +285,31 @@ html {
         transform: scale(1.02);
     }
     
-    .section-content {
+    .section-content1 {
         bottom: 2.5rem;
+        top: 40%;
+        left: 50%;
+    }
+    .section-content2 {
+        bottom: 2.5rem;
+        top: 40%;
+        left: 50%;
     }
     
     /* Mobile typography - Kepler Std 40pt */
     .section-title {
         font-size: 2.5rem;
+        
     }
     
     /* Mobile typography - Kepler Std 40pt */
     .logo-main {
         font-size: 2.5rem;
+    }
+    
+    /* Логотип на мобильных тоже с отступом 40px от верха */
+    .center-overlay {
+        top: 40px;
     }
     
     /* Mobile typography - Aktiv Grotesk Corp 13pt */
