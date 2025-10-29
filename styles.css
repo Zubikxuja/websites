@@ -1,0 +1,567 @@
+/* ============================================
+   IMPORTS - Kepler Std и Aktiv Grotesk Corp
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Поддержка кастомных шрифтов Kepler Std и Aktiv Grotesk Corp */
+@font-face {
+    font-family: 'Kepler Std';
+    src: url('fonts/KeplerStd-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kepler Std';
+    src: url('fonts/KeplerStd-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Aktiv Grotesk Corp';
+    src: url('fonts/AktivGroteskCorp-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Aktiv Grotesk Corp';
+    src: url('fonts/AktivGroteskCorp-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* ============================================
+   CSS VARIABLES - ЦВЕТА
+   ============================================ */
+:root {
+    /* Background */
+    --bg-primary: #FAF6F4;
+    --bg-secondary: #F4EFEC;
+    
+    /* Text */
+    --text-primary: #393839;
+    --text-secondary: rgba(57, 56, 57, 0.6);
+    
+    /* Accent */
+    --accent-green: #707863;
+    
+    /* Button */
+    --btn-primary: #CECBB5;
+}
+
+/* ============================================
+   TYPE SCALE - КЕГЛИ ТЕКСТА
+   ============================================ */
+:root {
+    /* Kepler Std Display */
+    --font-size-88: 5.5rem;    /* 88pt - Display / Statistic */
+    --font-size-64: 4rem;      /* 64pt - H1 / Display / Caps */
+    --font-size-48: 3rem;      /* 48pt - H2 variants */
+    --font-size-32: 2rem;      /* 32pt - H3 / Display Caps / Gallery */
+    --font-size-24: 1.5rem;    /* 24pt - Subtitle Italic */
+    --font-size-16-display: 1rem; /* 16pt - Display / Label */
+    
+    /* Aktiv Grotesk Corp */
+    --font-size-20: 1.25rem;   /* 20pt - Lead */
+    --font-size-16: 1rem;      /* 16pt - Default / Button / Strong */
+    --font-size-12: 0.75rem;   /* 12pt - Small */
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+    font-size: var(--font-size-16);
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   TYPOGRAPHY - Kepler Std Display
+   ============================================ */
+
+/* Display / Statistic - 88pt */
+.display-statistic {
+    font-family: 'Kepler Std', 'Playfair Display', serif;
+    font-size: var(--font-size-88);
+    line-height: 1;
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+/* H1 / Display / Caps - 64pt */
+.h1-caps {
+    font-family: 'Kepler Std', 'Playfair Display', serif;
+    font-size: var(--font-size-64);
+    line-height: 1.1;
+    color: var(--text-primary);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* H2 / Italic Display - 48pt */
+.h2-italic {
+    font-family: 'Kepler Std', 'Playfair Display', serif;
+    font-size: var(--font-size-48);
+    line-height: 1.2;
+    color: var(--text-primary);
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* H2 / Display - 48pt */
+.h2-display {
+    font-family: 'Kepler Std', 'Playfair Display', serif;
+    font-size: var(--font-size-48);
+    line-height: 1.2;
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+/* H2 / Display Caps - 48pt */
+.h2-caps {
+    font-family: 'Kepler Std', 'Playfair Display', serif;
+    font-size: var(--font-size-48);
+    line-height: 1.2;
+    color: var(--text-primary);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-style: italic;
+}
+
+/* H3 / Display - 32pt */
+.h3-display {
+    font-family: 'Kepler Std', 'Playfair Display', serif;
+    font-size: var(--font-size-32);
+    line-height: 1.3;
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+/* Display Caps / Gallery - 32pt */
+.gallery-title {
+    font-family: 'Kepler Std', 'Playfair Display', serif;
+    font-size: var(--font-size-32);
+    line-height: 1.3;
+    color: var(--text-primary);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Subtitle Italic - 24pt */
+.subtitle-italic {
+    font-family: 'Kepler Std', 'Playfair Display', serif;
+    font-size: var(--font-size-24);
+    line-height: 1.4;
+    color: var(--text-primary);
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Display / Label - 16pt */
+.label-display {
+    font-family: 'Kepler Std', 'Playfair Display', serif;
+    font-size: var(--font-size-16-display);
+    line-height: 1.5;
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+/* ============================================
+   TYPOGRAPHY - Aktiv Grotesk Corp
+   ============================================ */
+
+/* Lead Caps - 20pt CAPS Regular */
+.lead-caps {
+    font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+    font-size: var(--font-size-20);
+    line-height: 1.4;
+    color: var(--text-primary);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Lead - 20pt Regular */
+.lead {
+    font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+    font-size: var(--font-size-20);
+    line-height: 1.4;
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+/* Lead Medium - 20pt Medium */
+.lead-medium {
+    font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+    font-size: var(--font-size-20);
+    line-height: 1.4;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Button Caps - 16pt CAPS Regular */
+.button-caps {
+    font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+    font-size: var(--font-size-16);
+    line-height: 1.5;
+    color: var(--text-primary);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Strong - 16pt Medium */
+.strong {
+    font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+    font-size: var(--font-size-16);
+    line-height: 1.5;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Strong Caps - 16pt Medium Caps */
+.strong-caps {
+    font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+    font-size: var(--font-size-16);
+    line-height: 1.5;
+    color: var(--text-primary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Default - 16pt Regular */
+p, .default-text {
+    font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+    font-size: var(--font-size-16);
+    line-height: 1.5;
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+/* Small - 12pt Regular */
+.small {
+    font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+    font-size: var(--font-size-12);
+    line-height: 1.5;
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+/* Small Caps - 12pt Regular Caps */
+.small-caps {
+    font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+    font-size: var(--font-size-12);
+    line-height: 1.5;
+    color: var(--text-primary);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ============================================
+   COMPONENTS - HEADER & NAV
+   ============================================ */
+.header {
+    background-color: var(--bg-secondary);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Kepler Std', 'Playfair Display', serif;
+    font-size: var(--font-size-32);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+    font-size: var(--font-size-16);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-green);
+}
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+/* ============================================
+   COMPONENTS - BUTTONS
+   ============================================ */
+.btn-primary {
+    font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+    font-size: var(--font-size-16);
+    padding: 15px 40px;
+    background-color: var(--btn-primary);
+    color: var(--text-primary);
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-green);
+    color: white;
+}
+
+/* ============================================
+   COMPONENTS - SECTIONS
+   ============================================ */
+.hero {
+    padding: 100px 0;
+    text-align: center;
+    background-color: var(--bg-primary);
+}
+
+.footer {
+    background-color: var(--bg-secondary);
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+    :root {
+        /* Mobile font sizes */
+        --font-size-40: 2.5rem;      /* 40pt - Display / Contacts, H1 Caps */
+        --font-size-28: 1.75rem;     /* 28pt - H2 variants, Contacts Menu */
+        --font-size-20: 1.25rem;     /* 20pt - Gallery */
+        --font-size-16: 1rem;        /* 16pt - Label, Gallery Italic */
+        --font-size-20-menu: 1.25rem; /* 20pt - Menu Item */
+        --font-size-13: 0.8125rem;   /* 13pt - Button, Strong, Default */
+        --font-size-12: 0.75rem;     /* 12pt - Small Caps */
+        --font-size-10: 0.625rem;    /* 10pt - Small */
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-secondary);
+        flex-direction: column;
+        gap: 0;
+        padding: 20px;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-menu li {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(57, 56, 57, 0.1);
+    }
+    
+    .hero {
+        padding: 60px 0;
+    }
+    
+    /* ============================================
+       MOBILE TYPOGRAPHY - Kepler Std Display
+       ============================================ */
+    
+    /* Display / Contacts - 40pt */
+    .display-contacts {
+        font-family: 'Kepler Std', 'Playfair Display', serif;
+        font-size: var(--font-size-40);
+        line-height: 1.2;
+        color: var(--text-primary);
+        font-weight: 400;
+    }
+    
+    /* H1 / Display / Caps - 40pt (mobile) */
+    .h1-caps {
+        font-size: var(--font-size-40);
+    }
+    
+    /* H2 / Italic Display - 28pt (mobile) */
+    .h2-italic {
+        font-size: var(--font-size-28);
+    }
+    
+    /* H2 / Display Caps - 28pt (mobile) */
+    .h2-caps {
+        font-size: var(--font-size-28);
+    }
+    
+    /* Display / Contacts Menu - 28pt */
+    .contacts-menu {
+        font-family: 'Kepler Std', 'Playfair Display', serif;
+        font-size: var(--font-size-28);
+        line-height: 1.3;
+        color: var(--text-primary);
+        font-weight: 400;
+    }
+    
+    /* Display / Gallery - 20pt */
+    .gallery-title {
+        font-size: var(--font-size-20);
+    }
+    
+    /* Italic Display / Gallery - 16pt */
+    .gallery-italic {
+        font-family: 'Kepler Std', 'Playfair Display', serif;
+        font-size: var(--font-size-16);
+        line-height: 1.4;
+        color: var(--text-primary);
+        font-style: italic;
+        font-weight: 400;
+    }
+    
+    /* Display / Label - 16pt (mobile) */
+    .label-display {
+        font-size: var(--font-size-16);
+    }
+    
+    /* ============================================
+       MOBILE TYPOGRAPHY - Aktiv Grotesk Corp
+       ============================================ */
+    
+    /* Menu Item - 20pt Regular */
+    .menu-item {
+        font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+        font-size: var(--font-size-20-menu);
+        line-height: 1.5;
+        color: var(--text-primary);
+        font-weight: 400;
+    }
+    
+    /* Button Caps - 13pt CAPS Regular */
+    .btn-primary {
+        font-size: var(--font-size-13);
+    }
+    .button-caps {
+        font-size: var(--font-size-13);
+    }
+    
+    /* Title Case - 13pt Medium */
+    .title-case {
+        font-family: 'Aktiv Grotesk Corp', 'Inter', sans-serif;
+        font-size: var(--font-size-13);
+        line-height: 1.5;
+        color: var(--text-primary);
+        font-weight: 500;
+    }
+    
+    /* Strong - 13pt Medium */
+    .strong {
+        font-size: var(--font-size-13);
+    }
+    
+    /* Strong Caps - 13pt Medium Caps */
+    .strong-caps {
+        font-size: var(--font-size-13);
+    }
+    
+    /* Default - 13pt Regular */
+    p, .default-text {
+        font-size: var(--font-size-13);
+    }
+    
+    /* Small - 10pt Regular */
+    .small {
+        font-size: var(--font-size-10);
+    }
+    
+    /* Small Caps - 12pt Regular Caps */
+    .small-caps {
+        font-size: var(--font-size-12);
+    }
+    
+    /* Lead text override for mobile */
+    .lead {
+        font-size: var(--font-size-20);
+    }
+    .lead-medium {
+        font-size: var(--font-size-20);
+    }
+    .lead-caps {
+        font-size: var(--font-size-20);
+    }
+    
+    /* H3 override for mobile */
+    .h3-display {
+        font-size: var(--font-size-28);
+    }
+    
+    /* Display / Statistic override for mobile */
+    .display-statistic {
+        font-size: var(--font-size-40);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        /* Even smaller screens */
+        --font-size-40: 2rem;
+        --font-size-28: 1.5rem;
+        --font-size-20: 1.125rem;
+    }
+}
+

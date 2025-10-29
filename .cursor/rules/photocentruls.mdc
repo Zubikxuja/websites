@@ -1,0 +1,39 @@
+---
+description: Enforce project typography (Kepler Std + Aktiv Grotesk). Always use provided CSS tokens and classes; no Tailwind; sizes in px.
+globs:
+  - "**/*.css"
+  - "**/*.js"
+  - "**/*.jsx"
+  - "app/**/*.js"
+  - "components/**/*.js"
+---
+
+# Project Typography Rules
+
+## Fonts
+- Display: **Kepler Std Display**; Italic: **Kepler Std Italic**.
+- Sans: **Aktiv Grotesk Corp** (400 regular, 500 medium).
+- If fonts missing locally, keep class names and fallback stack from `app/styles/typography.css`.
+
+## Sizes 
+- 88pt → 117 px; 64pt → 85 px; 48pt → 63 px;
+- 32pt → 42 px; 24pt → 42 px; 20pt → 26 px;
+- 16pt → 21 px; 12pt → 16 px.
+
+## Classes mapping (must reuse, do not invent new names)
+- Kepler: `.display-88`/`.statistic`, `.h1-display`, `.h2-italic`, `.h2-display`, `.h3-display`, `.gallery-title`, `.subtitle-italic`, `.label-display`.
+- Aktiv: `.lead`, `.lead-strong`, `.btn-caps`, `.strong`, `.text-default`, `.text-small`.
+- Caps: add `.caps` (not inline styles). Italic: add `.italic` only where specified.
+
+## Authoring rules
+- When generating React/Next.js components, **import `app/styles/typography.css`** and only use classes above.
+- Do not switch to Tailwind or other frameworks unless explicitly asked.
+- Keep headings to the exact sizes above; no automatic scaling.
+- For buttons/labels in caps, add `.caps` and preserve letter-spacing.
+- For user copy paragraphs use `.text-default` or `.text-small`.
+
+## Examples
+- H1 (Kepler 64pt caps):
+  `<h1 className="h1-display caps">Title</h1>`
+- Lead (Aktiv 20pt medium):
+  `<p className="lead-strong">Lead paragraph</p>`

@@ -1,0 +1,300 @@
+/* ============================================
+   IMPORTS - Kepler Std и Aktiv Grotesk Corp
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* ============================================
+   CSS VARIABLES - ЦВЕТА И РАЗМЕРЫ
+   ============================================ */
+:root {
+    /* Background */
+    --bg-primary: #FAF6F4;
+    --bg-secondary: #F4EFEC;
+    
+    /* Text */
+    --text-primary: #393839;
+    --text-secondary: #393839;
+    
+    /* Accent */
+    --accent-green: #707863;
+    
+    /* Button */
+    --btn-primary: #CECBB5;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/* ============================================
+   HOME SCREEN - Split Layout
+   Максимальная ширина: 1400px
+   Каждая секция: 700px
+   ============================================ */
+
+.homescreen {
+    width: 100%;
+    max-width: 1400px;
+    height: 720px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background-color: #FAF6F4;
+    margin: 0 auto;
+}
+/* Center Logo Overlay */
+.center-overlay {
+    position: absolute;
+    text-align: center;
+    z-index: 100;
+    pointer-events: none;
+    transform: translate(-50%,-90%);
+    left:50%; top:50%;
+    
+}
+
+/* Kepler Std Display 64pt - H1 / Display / Caps (Desktop) */
+.logo-main {
+    font-family: 'Kepler Std', dis  ;
+    font-weight: 500;
+    text-transform: uppercase;
+    align-items: center;
+    line-height: 100%;
+    justify-content: space-between;
+    color: #FAF6F4;
+    font-size: clamp(50px, 5vw, 85px);
+    margin-bottom: 20px;
+    text-shadow: 0 10px 35px;
+}
+
+/* Aktiv Grotesk Corp 16pt - Regular / Default (Desktop) */
+.logo-subtitle {
+    font-family: 'Kepler Std';
+    font-weight: 90;
+    font-style: italic;
+    color: #FAF6F4;
+    font-size: 18px;
+    letter-spacing: 29.92;
+    
+}
+
+/* Split Sections - Каждая ровно 700px */
+.split-section {
+    font-family: 'Aktiv Grotesk Corp', serif;
+    
+    position: relative;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    overflow: auto;
+}
+
+.split-section:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.corporate-section {
+    background-image: url('../Images/Image Corporate Page.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.wedding-section {
+    background-image: url('../Images/Image Wedding Page.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dark overlay on images */
+.section-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.4s ease;
+}
+
+.split-section:hover .section-overlay {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Section content */
+.section-content1 {
+    position: absolute;
+    width: 300px;
+    top: 50%;              /* Позиция по вертикали: 50% = центр экрана */
+    left: 70%;             /* Позиция по горизонтали: 50% = центр экрана */
+    transform: translate(-50%, 40%);  /* Центрирование по горизонтали и смещение вниз на 40% */
+    z-index: 5;
+    
+}
+.section-content2 {
+    position: absolute;
+    top: 50%;              /* Позиция по вертикали: 50% = центр экрана */
+    left: 30%;             /* Позиция по горизонтали: 50% = центр экрана */
+    transform: translate(-50%, 40%);  /* Центрирование по горизонтали и смещение вниз на 40% */
+    z-index: 5;  
+}
+    /* КАК ПЕРЕМЕЩАТЬ ЭЛЕМЕНТ:
+    
+    1. ВВЕРХ/ВНИЗ через transform (второе значение):
+       translate(-50%, -10%) - выше
+       translate(-50%, 0%) - на уровне центра
+       translate(-50%, 40%) - ниже (текущее значение)
+       translate(-50%, 60%) - еще ниже
+       
+    2. ВВЕРХ/ВНИЗ через top:
+       top: 40% - выше
+       top: 50% - центр (текущее)
+       top: 60% - ниже
+       
+    3. ВЛЕВО/ВПРАВО через transform (первое значение):
+       translate(-60%, ...) - влево
+       translate(-50%, ...) - центр (текущее)
+       translate(-40%, ...) - вправо
+       translate(0%, ...) - без центрирования
+       
+    4. ВЛЕВО/ВПРАВО через left:
+       left: 40% - влево
+       left: 50% - центр (текущее)
+       left: 60% - вправо
+    */
+
+
+/* Kepler Std Display 48pt - Display / Caps (Desktop) */
+.section-title {
+    font-family: 'Aktiv Grotesk Corp', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    color: #FAF6F4;
+    text-transform: uppercase;
+    margin-bottom: 0.625rem;
+    text-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.5);
+    
+    /* Управление позицией текста через transform: translate(X%, Y%)
+       Первое значение (X%) - горизонтальное смещение:
+       - translate(-50%, ...) - сдвиг влево на 50% от ширины элемента
+       - translate(-40%, ...) - сдвиг влево на 40%
+       - translate(0%, ...) - без горизонтального сдвига
+       - translate(10%, ...) - сдвиг вправо на 10%
+       
+       Второе значение (Y%) - вертикальное смещение:
+       - translate(..., -50%) - сдвиг вверх на 50% от высоты элемента
+       - translate(..., -20%) - сдвиг вверх на 20%
+       - translate(..., 0%) - без вертикального сдвига
+       - translate(..., 10%) - сдвиг вниз на 10%
+    */
+}
+
+/* Aktiv Grotesk Corp 16pt - Regular / Default (Desktop) */
+.section-subtitle {
+    font-family: 'Aktiv Grotesk Corp', sans-serif;
+    font-size: 16px;
+    max-width: 300px;
+    font-weight: 200;
+    color: #FAF6F4;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.5);
+    
+    /* См. комментарии выше про transform: translate() */
+}
+
+/* Полоса между title и subtitle */
+.section-line {
+    width: 130px;                    /* Ширина полосы */
+    height: 1px;                     /* Толщина полосы */
+    background-color: #FAF6F4;       /* Цвет полосы (светлый) */
+    margin: 10px 0;                  /* Отступы сверху и снизу */
+    margin-left: auto;                /* Автоматические отступы слева/справа */
+    margin-right: auto;               /* для центрирования */
+    
+    /* Альтернативные варианты:
+       - width: 150px; - шире
+       - height: 2px; - толще
+       - background-color: #707863; - зеленый цвет
+       - margin: 15px 0; - больше расстояние
+    */
+}
+
+
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+@media (max-width: 1400px) {
+    .homescreen {
+        max-width: 100%;
+    }
+    
+    .split-section {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .homescreen {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    
+    .split-section {
+        width: 100%;
+        height: 50vh;
+    }
+    
+    .split-section:hover {
+        transform: scale(1.02);
+    }
+    
+    .section-content {
+        bottom: 2.5rem;
+    }
+    
+    /* Mobile typography - Kepler Std 40pt */
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    /* Mobile typography - Kepler Std 40pt */
+    .logo-main {
+        font-size: 2.5rem;
+    }
+    
+    /* Mobile typography - Aktiv Grotesk Corp 13pt */
+    .logo-subtitle {
+        font-size: 0.8125rem;
+    }
+    
+    /* Mobile typography - Aktiv Grotesk Corp 13pt */
+    .section-subtitle {
+        font-size: 0.8125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .logo-main {
+        font-size: 2rem;
+    }
+}
