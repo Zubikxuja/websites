@@ -87,7 +87,7 @@ python -m http.server 8000
 npx http-server
 ```
 
-Затем откройте http://localhost:8000 в браузере.
+Затем откройте photo-studio-site.vercel.app в браузере.
 
 ## Адаптивность
 
